@@ -1,0 +1,184 @@
+
+
+body {
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(57,1,7,0.7));
+    position: relative;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/bg01.jpg);
+    background-repeat: no-repeat;
+    // background-size: contain;
+    z-index: -1;
+
+}
+
+header {
+    width: 100%;
+    background-color: #390107; /* 根据需要调整颜色 */
+    margin: 0;
+    padding: 0;
+}
+
+#g_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-image: url(../images/nav_bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #390107; /* 确保背景色与header一致 */
+    border-bottom: #6e0913 1px solid;
+    padding: 20px; /* 根据需要调整 */
+}
+
+#logo {
+    margin-top: 70px; /* 在移动视图上给logo和导航之间一些空间 */
+}
+
+#nav ul {
+    display: none; /* 默认在移动视图上隐藏导航菜单 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 使ul中的li项在#nav中居中 */
+}
+
+#nav ul li {
+    margin: 10px 0; /* 在垂直方向上给li项一些间距 */
+}
+
+#nav ul li a img {
+    display: block;
+    width: auto;
+    height: 72px; /* 根据需要调整 */
+}
+
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // min-height: 100vh;
+    flex-direction: column;
+}
+
+#content {
+    text-align: center; /* 如果需要，确保内容居中 */
+    margin-bottom: 20px; /* 根据需要调整 */
+}
+
+#con_title img {
+    max-width: 100%;
+    height: auto;
+}
+
+#character_list {
+    display: flex;
+    justify-content: center;
+}
+
+#characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.characters-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1% 0; /* 简单的间距控制 */
+    box-sizing: border-box;
+}
+
+.characters-list img {
+    width: 100%; /* 让图片响应式地填充容器宽度 */
+    height: auto;
+    margin-bottom: 10px;
+}
+.characters-list {
+    h3 {
+        color: #ff7308;;
+    }
+    h4 {
+        color: rgb(255, 255, 255);
+    }
+}
+
+.footer_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 媒体查询 */
+@media screen and (min-width: 768px) {
+    .characters-list {
+        width: 18%;
+        margin: 1% 0;
+        h3 {
+            font-size: 10px;
+        }
+        h4 {
+            font-size: 10px;
+        }
+    }
+    #g_nav {
+        flex-direction: row;
+        align-items: center;
+        height: 72px;
+    }
+
+    #logo {
+        margin-bottom: 0; /* 取消logo和导航之间的空间 */
+    }
+
+    #nav ul {
+        display: flex; /* 在较宽的屏幕上显示导航菜单 */
+        justify-content: center; /* 保持导航项居中 */
+    }
+
+    #nav ul li {
+        margin: 0 10px; /* 调整li项的水平间距 */
+    }
+
+    .footer_btn {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .characters-list {
+        width: 18%; /* 调整为一行三个元素 */
+        margin: 1%;
+        h3 {
+            font-size: 13px;
+        }
+        h4 {
+            font-size: 13px;
+        }
+    }
+
+    #footer {
+        width: 980px;
+        margin: 0 auto;
+    }
+}
+
+

@@ -10,33 +10,65 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="js/main.js"></script>
 </head>
+<h1 class="hidden">Welcome to One Piece Characters</h1>
+<header>
+    <nav id="g_nav">
+        <div id="logo"><img src="images/g_nav_logo_btn.webp" alt="logo"></div>
+        <div id="nav">
+            <ul class="flex">
+                <li><a href="#"><img src="images/nav1_introduction.jpeg" alt="nav_introduction"></a></li>
+                <li><a href="#"><img src="images/nav2_character.jpeg" alt="nav2_character"></a></li>
+                <li><a href="#"><img src="images/nav3_mode.jpeg" alt="nav3_mode"></a></li>
+                <li><a href="#"><img src="images/nav4_system.jpeg" alt="nav4_system"></a></li>
+                <li><a href="#"><img src="images/nav5_online.jpeg" alt="nav5_online"></a></li>
+                <li><a href="#"><img src="images/nav6_special.jpeg" alt="nav6_special"></a></li>
+                <li><a href="#"><img src="images/nav7_movie.jpeg" alt="nav7_movie"></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <body>
-    <div id="app">
+    <main>
         <div id="app">
-            <div>
-                <div id="content">
-                    <h2>One Piece</h2>
-                    <p>Explore the diverse characters of the One Piece universe.</p>
-                    <h2 class="hidden">character</h2>
-   
-                </div>
-                <div id="character_list">
-                    <ul id="characters">
-                        <!-- in the "v-for=""", the name of attribute has to be matcched the name what you want to populate in {{}} -->
-                        <li class="characters-list" v-for="character in charactersData">
-                            <img :src="`images/character_${character.name}/character_${character.name}.png`" alt="Character Image">
-                            <h3>Epithet: {{ character.epithet }}</h3>
-                            <h4>Occupation: {{ character.occupation }}</h4>
-                            <h4>{{ character.affiliation }}</h4>
-    
-                        </li>
-                    </ul>
+            <div id="app">
+                <div>
+                    <div id="content">
+                        <!-- <h2>One Piece</h2>
+                        <p>Explore the diverse characters of the One Piece universe.</p> -->
+                        <h2 class="hidden">character</h2>
+                        <div id="con_title"><img src="images/charactertitle.png" alt="character_title"></div>
+                    </div>
+                    <div id="character_list">
+                        <ul id="characters">
+                            <!-- in the "v-for=""", the name of attribute has to be matcched the name what you want to populate in {{}} -->
+                            <li class="characters-list" v-for="character in charactersData">
+                                <img :src="`images/character_${character.name}/character_${character.name}.png`" alt="Character Image">
+                                <h3>Epithet: {{ character.epithet }}</h3>
+                                <h4>Occupation: {{ character.occupation }}</h4>
+                                <h4>{{ character.affiliation }}</h4>
+        
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <p id="abc"><img src="images/charactertxt.jpeg" alt="charactertxt"></p>
+            <div>
+                <h2 class="hidden">copyright</h2>
+                <p class="copy"><img src="images/copyright.png" alt="copyright"></p>
+            </div>
         </div>
+    </main>
 
-    </div>
+    <footer id="footer">
+        <ul class="footer_btn">
+            <li><a href=""><img src="images/footer_btn1.jpeg" alt="footer_btn1"></a></li>
+            <li><a href=""><img src="images/footer_btn2.jpeg" alt="footer_btn2"></a></li>
+        </ul>
+        <p><img src="images/footertext.gif" alt="footertext"></p>
+
+    </footer>
 
 </body>
 </html>
