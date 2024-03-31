@@ -2,11 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>ONE PIECE Video Game API</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="js/main.js"></script>
 </head>
+
 <body>
+    <div id="app">
+        <div id="app">
+            <div>
+                <div id="content">
+                    <h2>One Piece</h2>
+                    <p>Explore the diverse characters of the One Piece universe.</p>
+                    <h2 class="hidden">character</h2>
+   
+                </div>
+                <div id="character_list">
+                    <ul id="characters">
+                        <!-- in the "v-for=""", the name of attribute has to be matcched the name what you want to populate in {{}} -->
+                        <li class="characters-list" v-for="character in charactersData">
+                            <img :src="`images/character_${character.name}/character_${character.name}.png`" alt="Character Image">
+                            <h3>Epithet: {{ character.epithet }}</h3>
+                            <h4>Occupation: {{ character.occupation }}</h4>
+                            <h4>{{ character.affiliation }}</h4>
     
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
