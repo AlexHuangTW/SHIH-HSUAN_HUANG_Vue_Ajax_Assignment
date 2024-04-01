@@ -13,7 +13,7 @@
 <h1 class="hidden">Welcome to One Piece Characters</h1>
 <header>
     <nav id="g_nav">
-        <div id="logo"><img src="images/g_nav_logo_btn.webp" alt="logo"></div>
+        <div id="logo"><img src="images/logo-2.png" alt="logo"></div>
         <div id="nav">
             <ul class="flex">
                 <li><a href="#"><img src="images/nav1_introduction.jpeg" alt="nav_introduction"></a></li>
@@ -25,6 +25,7 @@
                 <li><a href="#"><img src="images/nav7_movie.jpeg" alt="nav7_movie"></a></li>
             </ul>
         </div>
+        
     </nav>
 </header>
 
@@ -38,11 +39,29 @@
                     <h2 class="hidden">character</h2>
                     <div id="con_title"><img src="images/charactertitle.png" alt="character_title"></div>
                 </div>
+                
+                <div id="spinner-con" v-if="isLoading">
+                    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                    <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    dur="1s"
+                    from="0 50 50"
+                    to="360 50 50"
+                    repeatCount="indefinite" />
+                    </path>
+                    </svg>
+                </div>
+                
+
                 <div id="character_list">
                     <ul id="characters">
                         <!-- Use v-for to traverse characters Data and add click events for each character -->
-                        <li class="characters-list" v-for="character in charactersData" @click="fetchCharacterMedia(character.id)">
-                        <img :src="`/SHIH-HSUAN_HUANG_Vue_Ajax_Assignment/images/character_${character.name.toLowerCase()}/character_${character.name.toLowerCase()}.png`" alt="Character Image">
+                        <li class="characters-list" v-for="character in charactersData">
+                        <a href="@character" @click="fetchCharacterMedia(character.id, $event)"><img :src="`/SHIH-HSUAN_HUANG_Vue_Ajax_Assignment/images/character_${character.name.toLowerCase()}/character_${character.name.toLowerCase()}.png`" alt="Character Image"></a>
                         <h2>Epithet: {{ character.epithet }}</h2>
                         <h3>Occupation: {{ character.occupation }}</h3>
                         <h4>{{ character.affiliation }}</h4>

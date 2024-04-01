@@ -41,7 +41,8 @@ header {
 }
 
 #logo {
-    margin-top: 70px;
+    margin-top: 10px;
+    max-width: 150px;
 }
 
 #nav ul {
@@ -169,6 +170,44 @@ header {
         flex-direction: row;
         align-items: center;
     }
+    #lightbox {
+        position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 100vw; /* vw=viewport width => screen width */
+        height: 40vw; /* vh = viewport height => screen height */
+        background-color: rgba(0, 0, 0, 0.7);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        z-index: 6; 
+      }
+      
+      .lightbox-content {
+        position: relative;
+        text-align: center;
+        max-width: 100%; 
+      }
+      .overlay-image {
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        bottom: 10px;
+        // left: 0;
+        // right: 0;
+        max-width: 50%;
+        z-index: 10;
+      }
+   
+      .lightbox-content img {
+        max-width: 100%;
+        // margin-bottom: 20px;
+      }
+      
+      
+      .hidden {
+        display: none;
+      }
 }
 
 
@@ -198,10 +237,10 @@ header {
 
     #lightbox {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw; /* vw=viewport width => screen width */
-        height: 100vh; /* vh = viewport height => screen height */
+        // top: 0;
+        // left: 0;
+        width: 70vw; /* vw=viewport width => screen width */
+        height: 38vw; /* vh = viewport height => screen height */
         background-color: rgba(0, 0, 0, 0.7);
         // display: flex;
         // justify-content: center;
@@ -212,7 +251,7 @@ header {
       .lightbox-content {
         position: relative;
         text-align: center;
-        max-width: 90%; 
+        max-width: 100%; 
       }
       .overlay-image {
         position: absolute;
@@ -223,11 +262,6 @@ header {
         // right: 0;
         max-width: 50%;
         z-index: 10;
-      }
-   
-      .lightbox-content img {
-        max-width: 100%;
-        margin-bottom: 20px;
       }
       
       
