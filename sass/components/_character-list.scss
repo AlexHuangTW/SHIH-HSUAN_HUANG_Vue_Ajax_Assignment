@@ -19,6 +19,7 @@ body::before {
 
 }
 
+
 header {
     width: 100%;
     background-color: #390107;
@@ -126,6 +127,21 @@ header {
     align-items: center;
 }
 
+#burger_button {
+    margin-top: 15px;
+    // position: relative;
+    z-index: 7;
+}
+
+.burger-line {
+    background-color: rgb(255, 255, 255);
+    height: 3px;
+    width: 25px;
+    display: block;
+    margin: 4px auto;
+    transition: all 0.5s;
+    }
+
 
 @media screen and (min-width: 768px) {
     .characters-list {
@@ -208,6 +224,14 @@ header {
       .hidden {
         display: none;
       }
+
+      #burger_button {
+        display: none;
+    }
+
+    .flex li a {
+        cursor: pointer;
+    }
 }
 
 
@@ -228,6 +252,13 @@ header {
         h5 {
             font-size: 13px;
         }
+    }
+    .characters-list a {
+        transition: transform 1s ease;
+    }
+    
+    .characters-list img:hover {
+        transform: scale(1.2);
     }
 
     #footer {
@@ -268,6 +299,7 @@ header {
       .hidden {
         display: none;
       }
+      
 }
 
 
